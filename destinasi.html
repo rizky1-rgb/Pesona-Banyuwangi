@@ -29,10 +29,10 @@
             background-color: var(--abu-muda);
             overflow-x: hidden;
         }
-        /* Header/Navbar */
+        /* Header/Navbar Sticky */
         header {
             background-color: var(--biru-tua);
-            position: fixed;
+            position: sticky;
             top: 0;
             width: 100%;
             z-index: 1000;
@@ -52,33 +52,52 @@
             font-weight: bold;
             text-decoration: none;
         }
-        /* Sembunyikan nav links di semua ukuran layar */
+        /* Desktop Navigation */
         .nav-links {
-            display: none;
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: var(--putih);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transisi);
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--biru-laut);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
         }
         .hamburger {
             cursor: pointer;
             color: var(--putih);
             font-size: 1.5rem;
+            display: none; /* Sembunyikan di desktop */
         }
-        /* Sidebar Hamburger Menu */
+        /* Sidebar Hamburger Menu (Mobile Only) */
         .sidebar {
             position: fixed;
             top: 0;
             right: -100%;
-            width: 25vw; /* 1/4 layar untuk desktop */
+            width: 70vw;
+            max-width: 300px;
             height: 100vh;
             background-color: var(--biru-tua);
             z-index: 2000;
             transition: var(--transisi);
             padding: 2rem;
             overflow-y: auto;
-        }
-        /* Untuk mobile */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 50vw; /* Setengah layar untuk mobile */
-            }
         }
         .sidebar.active {
             right: 0;
@@ -89,7 +108,7 @@
             flex-direction: column;
             justify-content: flex-start;
             gap: 2rem;
-            padding: 2rem 1.5rem; /* Jarak dari pinggir kanan dan kiri */
+            padding: 2rem 1.5rem;
         }
         .close-btn {
             align-self: flex-end;
@@ -146,7 +165,6 @@
             justify-content: center;
             text-align: center;
             color: var(--putih);
-            margin-top: 70px;
         }
         .hero-content {
             max-width: 800px;
@@ -184,7 +202,7 @@
             height: 4px;
             background: var(--hijau-daun);
         }
-        /* Sejarah dan Ciri Khas Kuliner */
+        /* Sejarah dan Ciri Khas */
         .sejarah-section {
             background-color: var(--putih);
             padding-bottom: 0;
@@ -287,7 +305,6 @@
             transition: var(--transisi);
             opacity: 0;
             transform: translateY(30px);
-            /* Border biru muda dengan ketebalan 5px */
             border: 5px solid var(--biru-langit);
         }
         .destination-card.visible {
@@ -362,6 +379,7 @@
             transition: var(--transisi);
             opacity: 0;
             transform: scale(0.9);
+            cursor: pointer;
         }
         .gallery-item.visible {
             opacity: 1;
@@ -394,7 +412,7 @@
             object-fit: cover;
             transition: var(--transisi);
         }
-        .image-overlay {
+        .interactive-image2 .image-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -473,6 +491,14 @@
             }
         }
         @media (max-width: 768px) {
+            .hamburger {
+                display: block; /* Tampilkan hamburger di mobile */
+            }
+            
+            .nav-links {
+                display: none; /* Sembunyikan nav links di mobile */
+            }
+
             .interactive-images {
                 grid-template-columns: 1fr;
             }
@@ -492,9 +518,6 @@
             }
             .gallery-grid {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-            .sidebar {
-                width: 60vw; /* Lebih lebar untuk mobile kecil */
             }
             .card-content {
                 padding: 1rem;
@@ -659,11 +682,12 @@ background: linear-gradient(45deg,  #1E90FF, #003366);
     width: 360px;
     height: 515px;
     background: white;
-    border: 2px solid linear-gradient(45deg, #1E90FF, #003366);
+    border: 2px solid #1E90FF; /* Fixed invalid gradient syntax for border */
     border-radius: 15px;
     box-shadow:0 6px 25px rgba(0,0,0,0.25);
     display:none;
     flex-direction:column;
+    z-index: 2000;
 }
 /* header */
 #chat-header {
@@ -827,7 +851,19 @@ background: linear-gradient(45deg,  #1E90FF, #003366);
     <!-- Header/Navbar dengan hamburger menu -->
     <header>
         <nav class="navbar">
-            <a href="#hero" class="logo">Destinasi Wisata Banyuwangi</a>
+            <a href="#hero" class="logo">Destinasi Wisata</a>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="test-kuliner.html">Kuliner Banyuwangi</a></li>
+                <li><a href="budaya.html">Budaya</a></li>
+                <li><a href="destinasi.html">Destinasi Wisata</a></li>
+                <li><a href="tips&info.html">Informasi & Tips</a></li>
+                <li><a href="Transport.html">Transportasi</a></li>
+            </ul>
+
+            <!-- Mobile Hamburger Icon -->
             <div class="hamburger" id="hamburger">☰</div>
         </nav>
     </header>
@@ -841,7 +877,7 @@ background: linear-gradient(45deg,  #1E90FF, #003366);
                 <li><a href="test-kuliner.html">Kuliner Banyuwangi</a></li>
                 <li><a href="budaya.html">Budaya</a></li>
                 <li><a href="destinasi.html">Destinasi Wisata</a></li>
-                <li><a href="tips&info.html">Informasi & Tips Wisata</a></li>
+                <li><a href="tips&info.html">Informasi & Tips</a></li>
                 <li><a href="Transport.html">Transportasi</a></li>
             </ul>
         </div>
@@ -1124,45 +1160,38 @@ background: linear-gradient(45deg,  #1E90FF, #003366);
             <svg class="progress-ring" height="50" width="50">
                 <circle class="progress-ring-circle" r="20" cx="25" cy="25" stroke-dasharray="125.66 125.66" stroke-dashoffset="125.66"></circle>
             </svg>
-            <span class="arrow">^</span>
+            <span class="arrow">▲</span>
         </div>
     </button>
-    <!-- BUTTON -->
+
+    <!-- CHAT BUTTON -->
     <div id="chatbot-btn">💬</div>
+
     <!-- CHAT WINDOW -->
     <div id="chat-window">
-        <div id="chat-header">🤖bot tour guide</div>
+        <div id="chat-header">bot tour guide</div>
         <div id="chat-messages"></div>
         <div id="typing-indicator" style="display:none;"></div>
+
         <div id="chat-input-area">
             <input id="chat-input" type="text" placeholder="Tanyakan wisata / kuliner..." />
             <button id="send-btn">Kirim</button>
         </div>
     </div>
-    <!-- POPUP IMAGE VIEWER dengan tombol Lihat Detail -->
-    <div class="popup" id="imgPopup">
-        <div class="popup-box">
-            <span class="close-popup" id="closePopup">&times;</span>
-            <img id="popupImg" src="">
-            <div class="popup-title" id="popupTitle"></div>
-            <div class="popup-desc" id="popupDesc"></div>
-            <!-- Tombol Lihat Detail -->
-            <a href="index.html" class="popup-btn-detail" id="popupBtnDetail">Lihat Detail</a>
-        </div>
-    </div>
-    <!-- Footer dengan informasi kontak dan media sosial -->
-         <footer>
+
+    <!-- Footer -->
+    <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Destinasi Kita - Pesona Banyuwangi</h3>
-                <p>Menjelajah destinasi wisata unik dan autentik Banyuwangi</p>
+                <h3>Pesona Banyuwangi</h3>
+                <p>Portal informasi pariwisata resmi Kabupaten Banyuwangi yang mempromosikan keindahan alam dan budaya lokal.</p>
             </div>
             <div class="footer-section">
                 <h3>Kontak</h3>
-                <p>📞 +62 812-1774-5524 </p>
-                <p>📞 +62 877-6519-7020 </p>
+                <p>📞 +62 812-1774-5524</p>
+                <p>📞 +62 877-6519-7020</p>
                 <p>✉️ info@pesonabanyuwangi.id</p>
-                <p>📍  SMK Negeri 1 Banyuwangi</p>
+                <p>📍 SMK Negeri 1 Banyuwangi</p>
             </div>
             <div class="footer-section">
                 <h3>Media Sosial</h3>
@@ -1175,10 +1204,22 @@ background: linear-gradient(45deg,  #1E90FF, #003366);
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 Transportasi - Pesona Banyuwangi. </p>
-            <p>Created by Group 3 | All right reserved</p>
+            <p>&copy; Pesona Banyuwangi.</p>
+            <p>Created by Side Team of PPLG 2 | All right reserved</p>
         </div>
     </footer>
+    <!-- POPUP IMAGE VIEWER dengan tombol Lihat Detail -->
+    <div class="popup" id="imgPopup">
+        <div class="popup-box">
+            <span class="close-popup" id="closePopup">&times;</span>
+            <img id="popupImg" src="">
+            <div class="popup-title" id="popupTitle"></div>
+            <div class="popup-desc" id="popupDesc"></div>
+            <!-- Tombol Lihat Detail -->
+            <a href="index.html" class="popup-btn-detail" id="popupBtnDetail">Lihat Detail</a>
+        </div>
+    </div>
+    
     <script>
         // Fungsi untuk smooth scrolling saat tautan navigasi diklik
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
