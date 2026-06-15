@@ -1237,6 +1237,17 @@
         </div>
     </div>
 
+    <!-- ====== POPUP GALERI (INI YANG HILANG DI KODE LAMA) ====== -->
+    <div class="popup" id="imgPopup">
+        <div class="popup-box">
+            <span class="close-popup" id="closePopup">×</span>
+            <img id="popupImg" src="" alt="Preview">
+            <div class="popup-title" id="popupTitle"></div>
+            <div class="popup-desc" id="popupDesc"></div>
+        </div>
+    </div>
+    <!-- ========================================================== -->
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -1629,13 +1640,13 @@
         const galleryInfo = {
             "Barong Ider Bumi": `Upacara barong ider bumi merupakan ritual pengusir bahaya dan permohonan kesuburan kepada Sang Maha Kuasa. Selain itu, upacara ini dipercaya sebagai ritual pensucian diri dari segala kesalahan yang dilakukan selama setahun dan penyembuhan terhadap wabah penyakit. Tradisi ini telah berjalan selama puluhan tahun, salah satu sumber sejarah menyebutkan ritual ini pertama kali diselenggarakan sekitar tahun 1940-an.
 
-            • Sejarah: Barong Ider Bumi bermula sekitar tahun 1840 saat Desa Kemiren dilanda wabah penyakit mematikan (pagebluk), lalu sesepuh desa mendapat wangsit untuk mengarak topeng Barong keliling desa demi mengusir petaka tersebut. Setelah ritual berhasil melenyapkan wabah, aktivitas mengelilingi desa (ider bumi) ini ditetapkan menjadi sumpah adat turun-temurun yang kini rutin digelar setiap 2 Syawal (Lebaran kedua) sebagai upacara bersih desa.
+                                • Sejarah: Barong Ider Bumi bermula sekitar tahun 1840 saat Desa Kemiren dilanda wabah penyakit mematikan (pagebluk), lalu sesepuh desa mendapat wangsit untuk mengarak topeng Barong keliling desa demi mengusir petaka tersebut. Setelah ritual berhasil melenyapkan wabah, aktivitas mengelilingi desa (ider bumi) ini ditetapkan menjadi sumpah adat turun-temurun yang kini rutin digelar setiap 2 Syawal (Lebaran kedua) sebagai upacara bersih desa.
 
-            • Makna: Makna Barong Ider Bumi mencakup pembersihan desa dari penyakit dan roh jahat (tolak bala), ungkapan syukur atas kemakmuran hidup lewat tradisi menyebar koin (udik-udik), serta sarana silaturahmi massal warga Suku Osing yang digelar tepat pada hari kedua Idulfitri (2 Syawal).
+                                • Makna: Makna Barong Ider Bumi mencakup pembersihan desa dari penyakit dan roh jahat (tolak bala), ungkapan syukur atas kemakmuran hidup lewat tradisi menyebar koin (udik-udik), serta sarana silaturahmi massal warga Suku Osing yang digelar tepat pada hari kedua Idulfitri (2 Syawal).
 
-            • Ciri Khas: Ciri khas utama Barong Ider Bumi terletak pada sosok Barong Kemiren berciri khas sayap (swiwi) di pundaknya, yang diarak keliling desa oleh para tetua adat berpakaian hitam (baju thulik). Sepanjang rute, prosesi ini selalu diiringi ritual Sembur Utik-Utik (melempar koin bercampur beras kuning dan bunga) yang diperebutkan oleh warga.
+                                • Ciri Khas: Ciri khas utama Barong Ider Bumi terletak pada sosok Barong Kemiren berciri khas sayap (swiwi) di pundaknya, yang diarak keliling desa oleh para tetua adat berpakaian hitam (baju thulik). Sepanjang rute, prosesi ini selalu diiringi ritual Sembur Utik-Utik (melempar koin bercampur beras kuning dan bunga) yang diperebutkan oleh warga.
 
-            • Daerah Persebarannya: Barong Ider Bumi sangat eksklusif dan hanya terpusat di Desa Adat Kemiren, Kecamatan Glagah, Kabupaten Banyuwangi.Tradisi ini tidak menyebar ke daerah lain karena ritual ini terikat mutlak pada keberadaan Barong Kemiren yang disakralkan sebagai pelindung gaib desa dari petaka sejarah masa lalu. Seluruh prosesi arak-arakan ritual tolak bala ini hanya berlangsung dengan menyusuri jalan utama Desa Kemiren sepanjang 2 kilometer, bergerak dari batas gerbang barat hingga batas gerbang timur desa.`,
+                                • Daerah Persebarannya: Barong Ider Bumi sangat eksklusif dan hanya terpusat di Desa Adat Kemiren, Kecamatan Glagah, Kabupaten Banyuwangi.Tradisi ini tidak menyebar ke daerah lain karena ritual ini terikat mutlak pada keberadaan Barong Kemiren yang disakralkan sebagai pelindung gaib desa dari petaka sejarah masa lalu. Seluruh prosesi arak-arakan ritual tolak bala ini hanya berlangsung dengan menyusuri jalan utama Desa Kemiren sepanjang 2 kilometer, bergerak dari batas gerbang barat hingga batas gerbang timur desa.`,
 
 
             "Angklung Caruk": `Angklung Banyuwangi adalah alat musik tradisional berbahan dasar bilahan atau tabung bambu khas dari Kabupaten Banyuwangi, Jawa Timur. Berbeda dengan angklung Jawa Barat yang dimainkan dengan cara digoyang, Angklung Banyuwangi dimainkan dengan cara dipukul. Nada-nada pada Angklung Banyuwangi disusun menggunakan tangga nada pentatonik selendro khas Banyuwangian sebanyak 15 nada (meliputi 3 oktaf). Alat musik ini ditata dari nada terendah di sebelah kiri penabuh hingga nada tertinggi di sebelah kanan.
@@ -1662,7 +1673,7 @@
             • Daerah Persebaran: Tradisi ini tersebar dan dilestarikan secara turun-temurun di wilayah Kabupaten Banyuwangi, Jawa Timur, khususnya di kantong-kantong pemukiman masyarakat Suku Osing (Blambangan), seperti di Kecamatan Glagah, Kemiren, Rogojampi, Kabat, dan sekitarnya.`,
 
 
-            "Mocoan Lontar Yusuf": `Mocoan Lontar Yusuf adalah tradisi lisan Suku Osing Banyuwangi berupa pelantunan tembang macapat dari kitab kuno beraksara pegon yang berisi kisah spiritual Nabi Yusuf AS [1.1]. Tradisi semalam suntuk yang dibawakan kaum pria ini berfungsi sebagai sarana ritual selamatan atau tolak bala dalam berbagai hajat daur hidup (seperti pernikahan dan khitanan) guna memohon berkah serta keselamatan.
+            "Mocoan Lontar Yusup": `Mocoan Lontar Yusuf adalah tradisi lisan Suku Osing Banyuwangi berupa pelantunan tembang macapat dari kitab kuno beraksara pegon yang berisi kisah spiritual Nabi Yusuf AS [1.1]. Tradisi semalam suntuk yang dibawakan kaum pria ini berfungsi sebagai sarana ritual selamatan atau tolak bala dalam berbagai hajat daur hidup (seperti pernikahan dan khitanan) guna memohon berkah serta keselamatan.
 
             • Sejarah: Mocoan Lontar Yusuf berakar dari strategi dakwah Islam di tanah Blambangan (Banyuwangi) sekitar abad ke-16 hingga ke-19, yang menggabungkan tradisi sastra macapat Hindu-Buddha dengan teks bernuansa Islam beraksara Pegon. Naskah yang awalnya ditulis di daun lontar ini berevolusi menjadi ritual magis-religius untuk ngalap berkah dari kisah Nabi Yusuf AS, hingga akhirnya diakui sebagai Warisan Budaya Tak Benda nasional pada tahun 2019.
 
@@ -1806,4 +1817,3 @@
     </script>
 </body>
 </html>
-
